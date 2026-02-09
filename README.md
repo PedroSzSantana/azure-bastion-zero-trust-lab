@@ -22,8 +22,11 @@ Gestão de Identidade e Acesso: Implementação de acesso administrativo seguro 
 
 ![Captura de tela_9-2-2026_135915_portal azure com](https://github.com/user-attachments/assets/32a084cb-0798-4498-a030-ece960538227)
 
+Nota técnica: Como demonstrado na captura da interface de rede, o campo Public IP address está vazio. A máquina virtual possui apenas o endereço privado 10.0.2.4, tornando-a invisível e inacessível via internet pública direta.
 
 2. Acesso via Azure Bastion (Sessão Segura)
+   
+<img width="1913" height="897" alt="Screenshot 2026-02-09 164952" src="https://github.com/user-attachments/assets/d2126a1d-7cc0-465c-9088-43c7983f18f6" />
 
 Nota técnica: O acesso administrativo é realizado via portal do Azure, onde o Bastion encapsula o tráfego RDP/SSH em uma sessão HTTPS (porta 443).
 
