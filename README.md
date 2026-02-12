@@ -5,16 +5,16 @@ Este projeto demonstra a implementação de uma infraestrutura de rede segura no
 
 🏗️ Arquitetura da Solução \
 A rede foi desenhada com segmentação estrita utilizando os seguintes serviços:\
-Virtual Network (VNet): Espaço de endereçamento isolado (vnet-lab).
-Azure Bastion (PaaS): Gateway de gerenciamento via navegador encapsulado em HTTPS (Porta 443).
-Network Security Groups (NSG): Regras de firewall granulares aplicadas para restringir o tráfego interno.
-Máquina Virtual (Windows/Linux): Host configurado estritamente com Private IP, residindo em uma sub-rede isolada.
+Virtual Network (VNet): Espaço de endereçamento isolado (vnet-lab).\
+Azure Bastion (PaaS): Gateway de gerenciamento via navegador encapsulado em HTTPS (Porta 443).\
+Network Security Groups (NSG): Regras de firewall granulares aplicadas para restringir o tráfego interno.\
+Máquina Virtual (Windows/Linux): Host configurado estritamente com Private IP, residindo em uma sub-rede isolada.\
 
-🚀 Competências Demonstradas
-Hardening de Infraestrutura: Eliminação de IPs públicos para redução drástica da superfície de ataque.
-Segurança de Rede: Configuração e segmentação de VNets e Subnets específicas (AzureBastionSubnet).
-Gestão de Identidade e Acesso (IAM): Implementação de acesso administrativo seguro e baseado em identidade via portal.
-Arquitetura Cloud: Domínio do Modelo de Responsabilidade Compartilhada da Microsoft.
+🚀 Competências Demonstradas\
+Hardening de Infraestrutura: Eliminação de IPs públicos para redução drástica da superfície de ataque.\
+Segurança de Rede: Configuração e segmentação de VNets e Subnets específicas (AzureBastionSubnet).\
+Gestão de Identidade e Acesso (IAM): Implementação de acesso administrativo seguro e baseado em identidade via portal.\
+Arquitetura Cloud: Domínio do Modelo de Responsabilidade Compartilhada da Microsoft.\
 
 🛠️ Detalhes da Implementação
 Pré-requisitos
