@@ -10,20 +10,15 @@ Azure Bastion (PaaS): Gateway de gerenciamento via navegador encapsulado em HTTP
 Network Security Groups (NSG): Regras de firewall granulares aplicadas para restringir o tráfego interno.\
 Máquina Virtual (Windows/Linux): Host configurado estritamente com Private IP, residindo em uma sub-rede isolada.\
 
-🚀 Competências Demonstradas\
-Hardening de Infraestrutura: Eliminação de IPs públicos para redução drástica da superfície de ataque.\
-Segurança de Rede: Configuração e segmentação de VNets e Subnets específicas (AzureBastionSubnet).\
-Gestão de Identidade e Acesso (IAM): Implementação de acesso administrativo seguro e baseado em identidade via portal.\
-Arquitetura Cloud: Domínio do Modelo de Responsabilidade Compartilhada da Microsoft.\
+🛠️ Detalhes da Rede (Networking)
+AzureBastionSubnet: 10.0.1.0/26 \
+Workload Subnet (snet-vm): 10.0.2.0/24 \
+IP Privado da VM: 10.0.2.4 \
 
-🛠️ Detalhes da Implementação
-Pré-requisitos
-Assinatura ativa no Azure (utilizado Azure for Students).
-Permissões de Contribuidor ou Administrador de Rede.
-Configuração de Rede
-VNet Address Space: 10.0.0.0/16
-AzureBastionSubnet: 10.0.1.0/26 (Sub-rede dedicada ao gateway).
-Workload Subnet (snet-vm): 10.0.2.0/24 (Sub-rede protegida para servidores).
+🚀 Competências Demonstradas
+Hardening de Infraestrutura: Eliminação de IPs públicos para redução da superfície de ataque. \
+Segurança de Rede: Configuração e segmentação de sub-redes para isolamento de tráfego. \
+Gestão de Acesso: Implementação de acesso administrativo seguro via túnel TLS/SSL.\
 
 📸 Evidências do Laboratório
 
@@ -46,12 +41,11 @@ Nota técnica: Demonstração da separação lógica entre a rede de gestão e a
 
 Nota técnica: Acesso realizado diretamente pelo navegador. O tráfego RDP é encapsulado em uma sessão TLS na porta 443, protegendo as credenciais contra ataques de "Man-in-the-Middle".
 
-🛡️ Análise de Segurança: Por que usar Bastion?
-
-Ao invés de abrir a porta 3389 (RDP) para o mundo, a arquitetura implementada protege o ambiente contra:
-Port Scanning: Atacantes não encontram portas abertas para tentar explorar.
-Brute Force/Password Spray: Sem IP público, não há alvo direto para tentativas de login automatizadas.
-Exploits de Dia Zero: O Bastion, sendo um serviço PaaS, é mantido e atualizado pela Microsoft contra vulnerabilidades de infraestrutura.
+🛡️ Análise de Segurança: Por que usar Bastion?\
+Ao invés de expor o servidor, a arquitetura implementada protege o ambiente contra:\
+Port Scanning: Atacantes não encontram portas abertas para exploração.\
+Brute Force: Sem IP público, não há alvo para tentativas de login automatizadas.\
+Man-in-the-Middle: A conexão via Bastion garante criptografia ponta-a-ponta.\
 
 📈 Próximos Passos (Roadmap de Estudo)
 [ ] Integrar logs da VNet e do Bastion ao Microsoft Sentinel para monitoramento de SIEM.
