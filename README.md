@@ -1,36 +1,65 @@
 🛡️ Azure Secure Access Lab: Implementação de Arquitetura Zero Trust
 
 📝 Descrição
-
-Este projeto demonstra a implementação de uma infraestrutura de rede segura no Microsoft Azure, focada no isolamento total de recursos críticos. Utilizando os princípios de Zero Trust (Confiança Zero), configurei um ambiente onde servidores não possuem exposição direta à internet, mitigando vetores de ataque como varredura de portas e força bruta em RDP/SSH.
+Este projeto demonstra a implementação de uma infraestrutura de rede segura no Microsoft Azure, focada no isolamento total de recursos críticos. Utilizando os princípios de Zero Trust (Confiança Zero), configurei um ambiente onde servidores não possuem exposição direta à internet, mitigando vetores de ataque como varredura de portas e ataques de força bruta em protocolos administrativos (RDP/SSH).
 
 🏗️ Arquitetura da Solução
 A rede foi desenhada com segmentação estrita utilizando os seguintes serviços:
 Virtual Network (VNet): Espaço de endereçamento isolado (vnet-lab).
-Azure Bastion (PaaS): Gateway de gerenciamento via navegador (Porta 443).
-Network Security Groups (NSG): Regras de firewall granulares (vm-lab-nsg).
-Máquina Virtual (Linux/Windows): Configurada com Private IP apenas.
+Azure Bastion (PaaS): Gateway de gerenciamento via navegador encapsulado em HTTPS (Porta 443).
+Network Security Groups (NSG): Regras de firewall granulares aplicadas para restringir o tráfego interno.
+Máquina Virtual (Windows/Linux): Host configurado estritamente com Private IP, residindo em uma sub-rede isolada.
 
 🚀 Competências Demonstradas
-Hardening de Infraestrutura: Remoção de IPs públicos de servidores para redução de superfície de ataque.
-Segurança de Rede: Configuração de VNets e Subnets específicas (snet-vm).
-Gestão de Identidade e Acesso: Implementação de acesso administrativo seguro via túnel TLS/SSL (Bastion).
+Hardening de Infraestrutura: Eliminação de IPs públicos para redução drástica da superfície de ataque.
+Segurança de Rede: Configuração e segmentação de VNets e Subnets específicas (AzureBastionSubnet).
+Gestão de Identidade e Acesso (IAM): Implementação de acesso administrativo seguro e baseado em identidade via portal.
+Arquitetura Cloud: Domínio do Modelo de Responsabilidade Compartilhada da Microsoft.
+
+🛠️ Detalhes da Implementação
+Pré-requisitos
+Assinatura ativa no Azure (utilizado Azure for Students).
+Permissões de Contribuidor ou Administrador de Rede.
+Configuração de Rede
+VNet Address Space: 10.0.0.0/16
+AzureBastionSubnet: 10.0.1.0/26 (Sub-rede dedicada ao gateway).
+Workload Subnet (snet-vm): 10.0.2.0/24 (Sub-rede protegida para servidores).
 
 📸 Evidências do Laboratório
 
 1. Isolamento de Rede (Hardening)
 
-![Captura de tela_9-2-2026_135915_portal azure com](https://github.com/user-attachments/assets/32a084cb-0798-4498-a030-ece960538227)
+![vm](https://github.com/user-attachments/assets/c7ad59f3-b5a2-4458-a09a-09112e5f0d91)
 
-Nota técnica: Como demonstrado na captura da interface de rede, o campo Public IP address está vazio. A máquina virtual possui apenas o endereço privado 10.0.2.4, tornando-a invisível e inacessível via internet pública direta.
+Nota técnica: Conforme evidenciado na captura, o campo Public IP address está como None. A VM possui apenas o IP privado 10.0.2.4, tornando-a invisível para scanners de vulnerabilidade na internet pública.
 
-2. Acesso via Azure Bastion (Sessão Segura)
+2. Segmentação de Sub-redes
+
+![vnet](https://github.com/user-attachments/assets/c7e6ae19-c850-41d2-83d4-bcc2f698d0f5)
+
    
-<img width="1913" height="897" alt="Screenshot 2026-02-09 164952" src="https://github.com/user-attachments/assets/d2126a1d-7cc0-465c-9088-43c7983f18f6" />
+Nota técnica: Demonstração da separação lógica entre a rede de gestão e a rede de dados, seguindo as melhores práticas do Well-Architected Framework da Microsoft.
 
-Nota técnica: O acesso administrativo é realizado via portal do Azure, onde o Bastion encapsula o tráfego RDP/SSH em uma sessão HTTPS (porta 443).
+3. Acesso Seguro via Azure Bastion
+
+<img width="1913" height="897" alt="bastion" src="https://github.com/user-attachments/assets/7730e074-0019-4f0b-87e0-d8d5b15e30a1" />
+
+Nota técnica: Acesso realizado diretamente pelo navegador. O tráfego RDP é encapsulado em uma sessão TLS na porta 443, protegendo as credenciais contra ataques de "Man-in-the-Middle".
+
+🛡️ Análise de Segurança: Por que usar Bastion?
+
+Ao invés de abrir a porta 3389 (RDP) para o mundo, a arquitetura implementada protege o ambiente contra:
+Port Scanning: Atacantes não encontram portas abertas para tentar explorar.
+Brute Force/Password Spray: Sem IP público, não há alvo direto para tentativas de login automatizadas.
+Exploits de Dia Zero: O Bastion, sendo um serviço PaaS, é mantido e atualizado pela Microsoft contra vulnerabilidades de infraestrutura.
+
+📈 Próximos Passos (Roadmap de Estudo)
+[ ] Integrar logs da VNet e do Bastion ao Microsoft Sentinel para monitoramento de SIEM.
+[ ] Implementar Just-In-Time (JIT) VM Access para elevar ainda mais a barreira de entrada.
+[ ] Configurar um Azure Firewall para controle de tráfego de saída (Egress filtering).
 
 🎓 Conclusão
+Este laboratório valida os conhecimentos práticos adquiridos para a certificação Microsoft SC-900, demonstrando a capacidade de arquitetar soluções que protegem a identidade e a infraestrutura em conformidade com o modelo de Confiança Zero.
 
-Este laboratório valida os conhecimentos adquiridos na certificação Microsoft SC-900, aplicando na prática conceitos de segurança em nuvem e proteção de perímetro.
-Pedro Souza Estudante de Defesa Cibernética | Microsoft Certified SC-900
+Pedro Souza
+Estudante de Defesa Cibernética | Desenvolvedor Full Stack | Microsoft Certified SC-900
