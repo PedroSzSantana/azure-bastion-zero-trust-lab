@@ -3,7 +3,7 @@
 📝 Descrição
 Este projeto demonstra a implementação de uma infraestrutura de rede segura no Microsoft Azure, focada no isolamento total de recursos críticos. Utilizando os princípios de Zero Trust (Confiança Zero), configurei um ambiente onde servidores não possuem exposição direta à internet, mitigando vetores de ataque como varredura de portas e ataques de força bruta em protocolos administrativos (RDP/SSH).
 
-🏗️ Arquitetura da Solução
+🏗️ Arquitetura da Solução ##
 A rede foi desenhada com segmentação estrita utilizando os seguintes serviços:
 Virtual Network (VNet): Espaço de endereçamento isolado (vnet-lab).
 Azure Bastion (PaaS): Gateway de gerenciamento via navegador encapsulado em HTTPS (Porta 443).
