@@ -47,11 +47,6 @@ Port Scanning: Atacantes não encontram portas abertas para exploração.\
 Brute Force: Sem IP público, não há alvo para tentativas de login automatizadas.\
 Man-in-the-Middle: A conexão via Bastion garante criptografia ponta-a-ponta.\
 
-📈 Próximos Passos (Roadmap de Estudo)
-[ ] Integrar logs da VNet e do Bastion ao Microsoft Sentinel para monitoramento de SIEM.
-[ ] Implementar Just-In-Time (JIT) VM Access para elevar ainda mais a barreira de entrada.
-[ ] Configurar um Azure Firewall para controle de tráfego de saída (Egress filtering).
-
 🎓 Conclusão
 Este laboratório valida os conhecimentos práticos adquiridos para a certificação Microsoft SC-900, demonstrando a capacidade de arquitetar soluções que protegem a identidade e a infraestrutura em conformidade com o modelo de Confiança Zero.
 
