@@ -1,6 +1,6 @@
 🛡️ Azure Secure Access Lab: Implementação de Arquitetura Zero Trust
 
-📝 Descrição
+📝 Descrição\
 Este projeto demonstra a implementação de uma infraestrutura de rede segura no Microsoft Azure, focada no isolamento total de recursos críticos. Utilizando os princípios de Zero Trust (Confiança Zero), configurei um ambiente onde servidores não possuem exposição direta à internet, mitigando vetores de ataque como varredura de portas e ataques de força bruta em protocolos administrativos (RDP/SSH).
 
 🏗️ Arquitetura da Solução \
@@ -10,17 +10,17 @@ Azure Bastion (PaaS): Gateway de gerenciamento via navegador encapsulado em HTTP
 Network Security Groups (NSG): Regras de firewall granulares aplicadas para restringir o tráfego interno.\
 Máquina Virtual (Windows/Linux): Host configurado estritamente com Private IP, residindo em uma sub-rede isolada.\
 
-🛠️ Detalhes da Rede (Networking)
+🛠️ Detalhes da Rede (Networking)\
 AzureBastionSubnet: 10.0.1.0/26 \
 Workload Subnet (snet-vm): 10.0.2.0/24 \
 IP Privado da VM: 10.0.2.4 \
 
-🚀 Competências Demonstradas
+🚀 Competências Demonstradas\
 Hardening de Infraestrutura: Eliminação de IPs públicos para redução da superfície de ataque. \
 Segurança de Rede: Configuração e segmentação de sub-redes para isolamento de tráfego. \
 Gestão de Acesso: Implementação de acesso administrativo seguro via túnel TLS/SSL.\
 
-📸 Evidências do Laboratório
+📸 Evidências do Laboratório\
 
 1. Isolamento de Rede (Hardening)
 
