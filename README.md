@@ -20,7 +20,7 @@ Hardening de Infraestrutura: Eliminação de IPs públicos para redução da sup
 Segurança de Rede: Configuração e segmentação de sub-redes para isolamento de tráfego. \
 Gestão de Acesso: Implementação de acesso administrativo seguro via túnel TLS/SSL.\
 
-📸 Evidências do Laboratório\
+📸 Evidências do Laboratório
 
 1. Isolamento de Rede (Hardening)
 
