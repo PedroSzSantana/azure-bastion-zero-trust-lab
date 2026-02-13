@@ -13,7 +13,7 @@ Máquina Virtual (Windows/Linux): Host configurado estritamente com Private IP, 
 🛠️ Detalhes da Rede (Networking)\
 AzureBastionSubnet: 10.0.1.0/26 \
 Workload Subnet (snet-vm): 10.0.2.0/24 \
-IP Privado da VM: 10.0.2.4 \
+IP Privado da VM: 10.0.2.4 
 
 🚀 Competências Demonstradas\
 Hardening de Infraestrutura: Eliminação de IPs públicos para redução da superfície de ataque. \
