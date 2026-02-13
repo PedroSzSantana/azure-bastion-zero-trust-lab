@@ -8,7 +8,7 @@ A rede foi desenhada com segmentação estrita utilizando os seguintes serviços
 Virtual Network (VNet): Espaço de endereçamento isolado (vnet-lab).\
 Azure Bastion (PaaS): Gateway de gerenciamento via navegador encapsulado em HTTPS (Porta 443).\
 Network Security Groups (NSG): Regras de firewall granulares aplicadas para restringir o tráfego interno.\
-Máquina Virtual (Windows/Linux): Host configurado estritamente com Private IP, residindo em uma sub-rede isolada.\
+Máquina Virtual (Windows/Linux): Host configurado estritamente com Private IP, residindo em uma sub-rede isolada.
 
 🛠️ Detalhes da Rede (Networking)\
 AzureBastionSubnet: 10.0.1.0/26 \
@@ -18,7 +18,7 @@ IP Privado da VM: 10.0.2.4
 🚀 Competências Demonstradas\
 Hardening de Infraestrutura: Eliminação de IPs públicos para redução da superfície de ataque. \
 Segurança de Rede: Configuração e segmentação de sub-redes para isolamento de tráfego. \
-Gestão de Acesso: Implementação de acesso administrativo seguro via túnel TLS/SSL.\
+Gestão de Acesso: Implementação de acesso administrativo seguro via túnel TLS/SSL.
 
 📸 Evidências do Laboratório
 
@@ -45,7 +45,7 @@ Nota técnica: Acesso realizado diretamente pelo navegador. O tráfego RDP é en
 Ao invés de expor o servidor, a arquitetura implementada protege o ambiente contra:\
 Port Scanning: Atacantes não encontram portas abertas para exploração.\
 Brute Force: Sem IP público, não há alvo para tentativas de login automatizadas.\
-Man-in-the-Middle: A conexão via Bastion garante criptografia ponta-a-ponta.\
+Man-in-the-Middle: A conexão via Bastion garante criptografia ponta-a-ponta.
 
 🎓 Conclusão
 Este laboratório valida os conhecimentos práticos adquiridos para a certificação Microsoft SC-900, demonstrando a capacidade de arquitetar soluções que protegem a identidade e a infraestrutura em conformidade com o modelo de Confiança Zero.
